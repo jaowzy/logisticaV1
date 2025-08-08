@@ -23,11 +23,11 @@ public class Cliente {
     @Column(name = "tipo_cliente", nullable = false)
     private TipoCliente tipoCliente; // B2B ou B2C
 
-    @Column(nullable = false)
     private String cnpj;
 
-    @Column(nullable = false)
     private String cpf;
+
+    private String idERP;
 
     private String nome;
 
@@ -42,6 +42,7 @@ public class Cliente {
         this.tipoCliente = dados.tipoCliente();
         this.cnpj = dados.cnpj();
         this.cpf = dados.cpf();
+        this.idERP = dados.idERP();
         this.nome = dados.nome();
         this.email = dados.email();
         this.telefone = dados.telefone();

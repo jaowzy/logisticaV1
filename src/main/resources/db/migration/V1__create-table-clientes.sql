@@ -12,8 +12,9 @@ create table clientes(
     uf char(2) not null,
     cidade varchar(100) not null,
     tipo_cliente varchar(3) not null,
-    cnpj varchar(18) not null,
-    cpf varchar(14) not null,
+    idERP varchar(6) not null,
+    cnpj varchar(18),
+    cpf varchar(14),
 
     primary key(id)
 

@@ -1,4 +1,4 @@
-package br.com.logistica.api.validacao;
+package br.com.logistica.api.domain.cliente.validacao;
 
 import br.com.logistica.api.domain.cliente.DadosCadastroCliente;
 import br.com.logistica.api.domain.cliente.TipoCliente;

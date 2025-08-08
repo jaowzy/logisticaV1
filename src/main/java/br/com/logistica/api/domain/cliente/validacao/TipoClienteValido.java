@@ -1,4 +1,4 @@
-package br.com.logistica.api.validacao;
+package br.com.logistica.api.domain.cliente.validacao;
 
 import jakarta.validation.Constraint;
 import jakarta.validation.Payload;

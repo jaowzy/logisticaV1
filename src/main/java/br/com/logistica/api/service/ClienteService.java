@@ -1,5 +1,6 @@
 package br.com.logistica.api.service;
 
+import br.com.logistica.api.domain.cliente.Cliente;
 import br.com.logistica.api.domain.cliente.ClienteRepository;
 import br.com.logistica.api.domain.cliente.DadosCadastroCliente;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +12,8 @@ public class ClienteService {
     @Autowired
     private ClienteRepository clienteRepository;
 
-    public void cadastrar(DadosCadastroCliente dto){
+    public Cliente cadastrar(DadosCadastroCliente dto){
+        var cliente = new Cliente(dto);
+        return clienteRepository.save(cliente);
     }
 }
