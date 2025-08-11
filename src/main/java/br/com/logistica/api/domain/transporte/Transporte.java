@@ -1,13 +1,15 @@
 package br.com.logistica.api.domain.transporte;
 
-import br.com.logistica.api.domain.endereco.Endereco;
 import jakarta.persistence.*;
+import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-@Table(name = "trasportes")
+import java.math.BigDecimal;
+
+@Table(name = "transportes")
 @Entity(name = "Transporte")
 @Getter
 @NoArgsConstructor
@@ -29,11 +31,11 @@ public class Transporte {
     private StatusEntrega statusEntrega;
     private ValidacaoTransportadora validacaoTransportadora;
     private String notaFiscal;
-    private String pesoKG;
+    private BigDecimal pesoKg;
     private String volumeCaixa;
     private String uniPecas;
 
-    public void cadastroTransporte(DadosCadastroTransporte dados){
+    public Transporte(DadosCadastroTransporte dados){
         this.pedidoTransporte = dados.pedidoTransporte();
         this.transportadora = dados.transportadora();
         this.codigoRastreio = dados.codigoRastreio();
@@ -44,7 +46,7 @@ public class Transporte {
         this.statusEntrega = dados.statusEntrega();
         this.validacaoTransportadora = dados.validacaoTransportadora();
         this.notaFiscal = dados.notaFiscal();
-        this.pesoKG = dados.pesoKG();
+        this.pesoKg = dados.pesoKg();
         this.volumeCaixa = dados.volumeCaixa();
         this.uniPecas = dados.uniPecas();
     }

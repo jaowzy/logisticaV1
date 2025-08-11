@@ -1,8 +1,9 @@
 package br.com.logistica.api.domain.transporte;
 
-import br.com.logistica.api.domain.endereco.DadosEndereco;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
+
+import java.math.BigDecimal;
 
 public record DadosCadastroTransporte(
         @NotBlank
@@ -27,7 +28,7 @@ public record DadosCadastroTransporte(
         @NotBlank
         String notaFiscal,
 
-        String pesoKG,
+        BigDecimal pesoKg,
 
         String volumeCaixa,
 

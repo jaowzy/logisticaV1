@@ -12,7 +12,7 @@ import jakarta.validation.constraints.Pattern;
 public record DadosCadastroCliente(
         @NotNull(message = "Tipo do cliente é obrigatório")
         TipoCliente tipoCliente,
-        @Pattern(regexp = "\\d{2}\\d{3}\\d{3}/\\d{4}-\\d{2}")
+        @Pattern(regexp = "\\d{2}\\.\\d{3}\\.\\d{3}/\\d{4}-\\d{2}")
         String cnpj,
         @Pattern(regexp = "\\d{3}\\.\\d{3}\\.\\d{3}-\\d{2}")
         String cpf,
