@@ -3,6 +3,7 @@ package br.com.logistica.api.controller;
 import br.com.logistica.api.domain.cliente.Cliente;
 import br.com.logistica.api.domain.cliente.ClienteRepository;
 import br.com.logistica.api.domain.cliente.DadosCadastroCliente;
+import br.com.logistica.api.service.ClienteService;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,13 +19,13 @@ import org.springframework.web.util.UriComponentsBuilder;
 public class ClienteController {
 
     @Autowired
-    private ClienteRepository repository;
+    private ClienteService service;
 
     @PostMapping
     @Transactional
     public ResponseEntity<Void> cadastrar(@RequestBody @Valid DadosCadastroCliente dados, UriComponentsBuilder uriBuilder){
         var cliente = new Cliente(dados);
-        repository.save(cliente);
+        service.cadastrar(dados);
         var uri = uriBuilder.path("/clientes/{id}").buildAndExpand(cliente.getId()).toUri();
         return ResponseEntity.created(uri).build();
     }
